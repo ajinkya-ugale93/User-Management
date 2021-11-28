@@ -1,0 +1,86 @@
+<div class="adduser-position" >
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <div class="card mb-3">
+                <div class="card-header" style="text-align: center">
+                    <h5 class="user-avatar"><strong><i class="fa fa-lock"></i> Add User</strong></h5>
+                </div>
+
+                <form #form="ngForm" role="form" [formGroup]="userInfo" (ngSubmit)="AddUser()">
+                    <div class="form-content card-body">
+                        <div class="form-group row">
+                            <div class="col-6 ">
+                                <label>First Name </label>
+                                <input type="text" [(ngModel)]="usersFirstName"
+                                    class="form-control input-underline input-lg " id="" placeholder="First Name"
+                                    formControlName="usersFirstName"
+                                    [ngClass]="{ 'is-invalid': submitted && f.usersFirstName.errors }">
+                                <div *ngIf="submitted && f.usersFirstName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.usersFirstName.errors.required">First name is required</div>
+
+                                </div>
+                            </div>
+                            <div class="col-6 ">
+                                <label>Last Name </label>
+                                <input type="text" [(ngModel)]="usersLastName"
+                                    class="form-control input-underline input-lg" id="" placeholder="Last Name"
+                                    formControlName="usersLastName"
+                                    [ngClass]="{ 'is-invalid': submitted && f.usersLastName.errors }">
+                                <div *ngIf="submitted && f.usersLastName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.usersLastName.errors.required">Last name is required</div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label>Email Id</label>
+                            <input type="text" [(ngModel)]="userEmail" class="form-control input-underline input-lg "
+                                id="" placeholder="User Email" formControlName="userEmail"
+                                [ngClass]="{ 'is-invalid': submitted && f.userEmail.errors }">
+                            <div *ngIf="submitted && f.userEmail.errors" class="invalid-feedback">
+                                <div *ngIf="f.userEmail.errors.required">Email is required</div>
+                                <div *ngIf="f.userEmail.errors.email">Email must be a valid email address</div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="checkbox checkbox-primary">
+                                <input id="checkbox2" [(ngModel)]="isAdmin" class="styled" type="checkbox" formControlName="isAdmin">
+                                <label for="checkbox2">
+                                    Is Admin
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label>Department</label>
+                            <select class="form-control form-control-sm" id="" [(ngModel)]="departmentsValue" formControlName="departmentsValue" [ngClass]="{ 'is-invalid': submitted && f.departmentsValue.errors }">
+                                <option>--Select--</option>
+                                <option *ngIf="!departments">Loading...</option>
+                                <option *ngFor="let item of departments" [ngValue]="item">
+                                    {{item?.departmentName}}</option>
+                            </select>
+                            <div *ngIf="submitted && f.departmentsValue.errors" class="invalid-feedback">
+                                <div *ngIf="f.departmentsValue.errors.required">Department name is required</div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-3"></div>
+                            <div class="col-2"><button type="submit"  mat-raised-button color="primary"> Submit
+                            </button></div>
+                            <div class="col-2"></div>
+                            <div class="col-2">
+                                <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+                            <br />
+                        </div>
+                            <div class="col-3"></div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

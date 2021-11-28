@@ -1,0 +1,126 @@
+.alternateColor:nth-of-type(odd) {
+    background-color: #E9ECEF;
+ }
+ .alternateColor:nth-of-type(even) {
+    background-color: #fff;
+ }
+ .highlight:hover {
+   background-color: #d2d0fe;
+   scale: 10px;
+ }
+
+ .mat-form-field{
+   display: inline-block !important;   
+}
+
+.mat-form-field :hover{
+   cursor: text !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix{
+ padding: 0px !important;
+}
+
+:host ::ng-deep {
+ .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgba(0,0,0,.12);              
+ }
+ mat-form-field {
+    .mat-hint, input, ::placeholder, .mat-form-field-label {
+       color: rgba(0,0,0,.50);          
+    }
+ }
+
+ .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.3em 0 0.5em 0; 
+ }
+}
+
+.example-full-width{
+   width: 60% !important;
+}
+
+.txtalign{
+   text-align: right;
+}
+
+.example-full-width:hover{
+   cursor: text !important;
+}
+
+.fa-custom-size{
+   font-size:35px;
+}
+
+.export {
+   width: 38px !important;
+   height: 38px !important;
+   padding: 0px !important;  
+   background-color: #00834d !important;
+   text-align: center !important;
+   vertical-align: middle !important;
+   border-radius: 10px !important;
+}
+
+.exportimage{
+   width: 30px !important;
+   height: 30px !important;
+   padding: 0px !important;
+   margin: 0px !important;
+}
+
+.exportimage:hover{
+   width: 33px !important;
+   height: 33px !important;
+   padding: 0px !important;
+   margin: 0px !important;
+}
+
+.heading{
+   margin-top: 13px !important;
+   color: #267251;
+   font-size: 0.9em;
+}
+
+.heading2{
+   margin-top: 13px !important;
+   color: #cc0000;
+   font-size: 0.9em;
+   margin-left: 35px;
+}
+
+.uniformtext{
+   font-size: 0.9em !important;
+}
+
+.adduser{
+   border-radius: 20px !important;
+}
+
+.activeCount{
+   color: #ffffff !important;
+   background-color: #267251 !important;
+   border-radius: 15px !important;
+   font-weight: bold !important;
+   padding: 1px 7px 1px 7px;
+}
+
+.deactiveCount{
+   color: #ffffff !important;
+   background-color: #cc0000 !important;
+   border-radius: 15px !important;
+   font-weight: bold !important;
+   padding: 1px 7px 1px 7px;
+   border: 0px;
+   cursor: pointer;
+}
+
+.divcard{
+   //box-shadow: 10px 10px 5px grey !important;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+   margin-bottom: 25px !important;
+}
+
+.popup{
+   width: 400px !important;
+}

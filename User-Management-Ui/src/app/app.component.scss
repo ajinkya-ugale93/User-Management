@@ -1,0 +1,42 @@
+@media all and (min-width: 768px) {
+    tr  {
+      td {
+        vertical-align: middle !important;
+      }
+      span {
+        &:not([class]) {
+          padding: 1rem 1rem;
+          -ms-text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+  .cool-link:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px #0056b3;
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+}
+.cool-link:hover:after {
+    transform: scaleX(1);
+}
+
+
+.cool-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.no-decoration {
+    text-decoration: none !important;
+}
+
+.fa-custom-size{
+    font-size:50px;
+}
+
+.fa-custom-size-user-config{
+  font-size: 25px;
+  margin-left: -8px;
+}

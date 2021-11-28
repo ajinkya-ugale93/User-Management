@@ -1,0 +1,53 @@
+
+  <div class="container" >
+    <div class="card mt-2 d-block ">      
+      <div class="col-2 text-left d-inline-block">
+        <button  mat-button mat-raised-button color="accent" (click)="openAddUserDialog()">
+          <mat-icon>add</mat-icon>Add User
+        </button>
+      </div>
+      <b class="heading">Active Users:</b><span class="activeCount ml-2">{{activeUsers}}</span>      
+        <b class="heading2">Disabled Users:</b><button type="button" class="deactiveCount ml-2">{{deactiveUsers}}</button>
+     
+    </div>
+  <mat-form-field >
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilterForUsersData($event)" placeholder="Enter Any Field Value">
+  </mat-form-field>
+  <table mat-table [dataSource]="userDetails" class="mat-elevation-z20" >
+-
+    <ng-container matColumnDef="FName" class="mat-elevation-z20">
+      <th mat-header-cell *matHeaderCellDef style="width:20%;">First Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.fname}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="LName" class="mat-elevation-z20">
+      <th mat-header-cell *matHeaderCellDef style="width:20%;"> Last Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.lname}} </td>
+    </ng-container>
+    <ng-container matColumnDef="email" class="mat-elevation-z20">
+      <th mat-header-cell *matHeaderCellDef style="width:30%;"> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Department" class="mat-elevation-z20">
+      <th mat-header-cell *matHeaderCellDef style="width:10%;"> Department </th>
+      <td mat-cell *matCellDef="let element"> {{element.departmentMasterId}} </td>
+    </ng-container>
+    <ng-container matColumnDef="isAdmin" class="mat-elevation-z20">
+      <th mat-header-cell *matHeaderCellDef style="width: 10%;"> Is Admin </th>
+      <td mat-cell *matCellDef="let element"> {{element.isAdmin | ConvertToYesNo}} </td>
+    </ng-container>
+    <ng-container matColumnDef="action" class="mat-elevation-z20">
+        <th mat-header-cell *matHeaderCellDef style="width:20%;"> Actions </th>
+        <td mat-cell *matCellDef="let element"><button style="min-width: 0!important;max-width: 50%!important;align-content: center !important;;"  mat-raised-button  (click)="openEditUserDialog($event,element.id) "><mat-icon color="primary">edit</mat-icon></button> 
+        <button style="min-width: 0!important;max-width: 50%!important;"  mat-raised-button  (click)="openConfirmationDialog(element.id) "><mat-icon color="warn">delete_forever</mat-icon></button> </td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsForUsersData" class="mat-elevation-z20"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsForUsersData;" class="mat-elevation-z20" [ngClass]="row.isActive ? 'bg-light' : 'bg-warning'"></tr>
+  </table>
+  <mat-paginator class="mat-elevation-z20" [pageSizeOptions]="[5,50,100,200,500,1000]" showFirstLastButtons></mat-paginator>
+    </div>
+
+
+
+<br>
