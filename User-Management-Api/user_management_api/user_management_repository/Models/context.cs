@@ -35,7 +35,7 @@ namespace user_management_repository.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=192.168.84.149;Database=JournalPerformance_DEV;User ID=sa_editdata;Password=sa_editdata;Integrated Security=False;");
+                optionsBuilder.UseSqlServer("Conection String");
             }
         }
 
